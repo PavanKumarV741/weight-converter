@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weight converter</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <h2>weight-converter</h2>
+            <div>
+            <input type="number" placeholder="Enter in Kg" id="kilograms" required/>
+            <!-- <input type="text" placeholder="Enter in pounds" id="pounds"/> -->
+            <button onclick="convert()">convert</button>
+            </div>
+
+            <div class="units">Grams:<span id="grams"></span></div>
+            <div class="units">Pounds:<span id="pounds"></span></div>
+            <div class="units">Ounces:<span id="ounces"></span></div>
+            <div id="demo"></div>
+        </div>    
+    </div>
+    <script>
+        var kilograms=document.getElementById("kilograms")
+        var pounds=document.getElementById("pounds")
+        var grams=document.getElementById("grams")
+        var ounces=document.getElementById("ounces")
+        var demo=document.getElementById("demo")
+        
+        function convert(){
+            if(kilograms.value==""){
+            demo.innerText="please enter a valid input"
+
+        }else{
+            grams.innerHTML=(kilograms.value*1000).toFixed(2)+" g"
+            pounds.innerHTML=(kilograms.value*2.205).toFixed(2)+" pounds"
+            ounces.innerHTML=(kilograms.value*35.28).toFixed(2)+" ounces"
+            demo.innerText=""
+        }
+        }
+    </script>
+</body>
+</html>
